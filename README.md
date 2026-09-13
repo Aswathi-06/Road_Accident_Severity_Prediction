@@ -1,4 +1,4 @@
-#Road Accident Severity Prediction\
+**Road Accident Severity Prediction**\
 \
 Road Accident Severity Prediction uses Machine Learning to classify road traffic accidents into three severity levels: Slight Injury, Serious Injury, and Fatal Injury, based on driver, vehicle, road, environment, and casualty details recorded at the time of the accident.\
 \
