@@ -1,4 +1,4 @@
-Road Accident Severity Prediction\
+##Road Accident Severity Prediction\
 \
 Road Accident Severity Prediction uses Machine Learning to classify road traffic accidents into three severity levels: Slight Injury, Serious Injury, and Fatal Injury, based on driver, vehicle, road, environment, and casualty details recorded at the time of the accident.\
 \
@@ -8,7 +8,6 @@ It contains 12,316 accident records with 32 input features covering driver infor
 Three classification models — Random Forest, Logistic Regression, and Decision Tree — are trained and compared to predict Accident_severity.\
 The dataset is divided into training and testing sets using an 80-20 split, with stratification on the target column to preserve class proportions across all three severity levels.\
 The performance of each model is evaluated using Accuracy Score, Classification Report, and a Confusion Matrix. \
-Visualization is also generated to interpret how the model makes its predictions.\
 \
 Install Required Libraries
 
@@ -25,7 +24,8 @@ EDA (Exploratory Data Analysis)
 Missing values are checked using df.isnull().sum(). Columns with heavy missing data (Defect_of_vehicle, Service_year_of_vehicle, Work_of_casuality, Fitness_of_casuality) are filled with 'Unknown', while columns with fewer missing values (such as Educational_level, Driving_experience, Type_of_vehicle, Road_surface_type, Type_of_collision, etc.) are filled with their mode (most frequent value).\
 Any remaining inconsistent null-like entries ('na', 'NA', 'unknown') are standardized and filled as 'Unknown'. \
 The distribution of Accident_severity is visualized using a Seaborn count plot to check class balance. \
-The target column is label-encoded (Slight Injury = 0, Serious Injury = 1, Fatal Injury = 2), and all remaining categorical features are One-Hot Encoded using pd.get_dummies(), expanding the dataset to 1,253 numerical features. \
+\
+The target column is label-encoded and all remaining categorical features are One-Hot Encoded, expanding the dataset to 1,253 numerical features. \
 A correlation heatmap is plotted to identify the top features most correlated with accident severity.\
 \
 Split Dataset
