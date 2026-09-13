@@ -44,4 +44,4 @@ Each model is evaluated on the test set using Accuracy Score, Classification Rep
 \
 A Decision Tree plot (top 2 levels) is also generated using plot_tree() to visually interpret the rules the model uses to classify accident severity.\
 \
-Finally, the trained model is used to predict the severity of a new accident by providing its driver, vehicle, road, and casualty details as input.\
+Finally, the trained model is used to predict the severity of a new accident by providing its driver, vehicle, road, and casualty details as input.
