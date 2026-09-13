@@ -10,17 +10,17 @@ The dataset is divided into training and testing sets using an 80-20 split, with
 The performance of each model is evaluated using Accuracy Score, Classification Report, and a Confusion Matrix. \
 Visualization is also generated to interpret how the model makes its predictions.\
 \
-Install Required Libraries\
+Install Required Libraries
 
 The project uses numpy, pandas, seaborn, matplotlib, scikit-learn and kagglehub.\
 The Kaggle API token was entered securely using getpass() and stored in the KAGGLE_API_TOKEN environment variable.\
 \
-Load Dataset\
+Load Dataset
 
 The dataset is downloaded from Kaggle using kagglehub.dataset_download("saurabhshahane/road-traffic-accidents"), and the file RTA Dataset.csv is loaded into a pandas DataFrame using pd.read_csv(). \
 The dataset has 12,316 rows and 32 columns, viewed initially with df.head() and df.shape.\
 \
-EDA (Exploratory Data Analysis)\
+EDA (Exploratory Data Analysis)
 
 Missing values are checked using df.isnull().sum(). Columns with heavy missing data (Defect_of_vehicle, Service_year_of_vehicle, Work_of_casuality, Fitness_of_casuality) are filled with 'Unknown', while columns with fewer missing values (such as Educational_level, Driving_experience, Type_of_vehicle, Road_surface_type, Type_of_collision, etc.) are filled with their mode (most frequent value).\
 Any remaining inconsistent null-like entries ('na', 'NA', 'unknown') are standardized and filled as 'Unknown'. \
@@ -28,17 +28,17 @@ The distribution of Accident_severity is visualized using a Seaborn count plot t
 The target column is label-encoded (Slight Injury = 0, Serious Injury = 1, Fatal Injury = 2), and all remaining categorical features are One-Hot Encoded using pd.get_dummies(), expanding the dataset to 1,253 numerical features. \
 A correlation heatmap is plotted to identify the top features most correlated with accident severity.\
 \
-Split Dataset\
+Split Dataset
 
 The dataset is split into training and testing sets with an 80-20 ratio, random_state=42 for reproducibility, and stratify=y to maintain the same proportion of Slight, Serious, and Fatal cases in both sets.\
 \
-Train\
+Train
 
 Three classification models Random Forest Classifier, Logistic Regression and Decision Tree Classifier are trained on the training set\
  \
 class_weight='balanced' is used across all models because the severity classes are highly imbalanced (most accidents are "Slight Injury"), and this setting helps the models pay more attention to the minority classes (Serious and Fatal).\
 \
-Evaluate the Model\
+Evaluate the Model
 
 Each model is evaluated on the test set using Accuracy Score, Classification Report and Confusion Matrix\
 \
